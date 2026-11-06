@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "cheloviymode:platinum_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "cheloviymode:platinum_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}
