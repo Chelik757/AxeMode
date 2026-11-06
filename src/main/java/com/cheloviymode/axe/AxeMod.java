@@ -14,22 +14,24 @@ public class AxeMod {
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
 
-        // Добавляем в креатив
+        // Добавляем предметы в креативные вкладки
         modEventBus.addListener(this::addCreative);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        // Секира в инструменты
+        // Добавляем секиру во вкладку "Инструменты и утилиты"
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.AXE);
         }
         
-        // Слиток и руда в ингредиенты/блоки
+        // Добавляем платиновый слиток во вкладку "Ингредиенты"
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.PLATINUM_INGOT);
         }
+
+        // Добавляем платиновую руду во вкладку "Природные блоки"
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModBlocks.PLATINUM_ORE);
+            event.accept(ModItems.PLATINUM_ORE_ITEM);
         }
     }
 }
