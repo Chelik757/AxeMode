@@ -1,6 +1,7 @@
 package com.cheloviymode.axe;
 
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -24,6 +25,12 @@ public class ModItems {
     // --- ПЛАТИНОВЫЙ СЛИТОК ---
     public static final DeferredItem<Item> PLATINUM_INGOT = ITEMS.registerItem(
             "platinum_ingot",
-            props -> new Item(new Item.Properties()) // Обычный предмет
+            props -> new Item(new Item.Properties())
+    );
+
+    // --- ПРЕДМЕТ ДЛЯ ПЛАТИНОВОЙ РУДЫ ---
+    public static final DeferredItem<BlockItem> PLATINUM_ORE_ITEM = ITEMS.registerSimpleBlockItem(
+            "platinum_ore", 
+            ModBlocks.PLATINUM_ORE
     );
 }
