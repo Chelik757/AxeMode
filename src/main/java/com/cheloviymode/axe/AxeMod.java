@@ -3,6 +3,7 @@ package com.cheloviymode.axe;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge; // <-- Добавлен импорт
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod(AxeMod.MOD_ID)
@@ -16,6 +17,9 @@ public class AxeMod {
 
         // Добавляем предметы в креативные вкладки
         modEventBus.addListener(this::addCreative);
+
+        // Регистрируем команды на игровой шине событий
+        NeoForge.EVENT_BUS.register(ModCommands.class); 
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
